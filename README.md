@@ -1,5 +1,5 @@
-# GoSpec v1.0
-CounterStrikeSharp plugin for allowing players to move themselves to spec by typing **!spec** in chat or **css_spec** in console.
+# GoSpec v1.1
+CounterStrikeSharp plugin for allowing players to move themselves to spec by typing **!spec** in chat.
 
 ## Installation
 1. Install [CounterStrikeSharp](https://github.com/roflmuffin/CounterStrikeSharp) and [Metamod](https://www.sourcemm.net/)
@@ -8,4 +8,9 @@ CounterStrikeSharp plugin for allowing players to move themselves to spec by typ
 4. Move `GoSpec` folder into your server's `addons/counterstrikesharp/plugins` folder.
 
 ## Commands
-**Spec:** `!spec` in chat to move to spec
+`!spec` in chat to move to spec
+_Alternatives:_ `!s`, `!afk`, `!brb`
+
+`!ct` in chat to join ct from spec
+
+`!t` in chat to join t from spec
