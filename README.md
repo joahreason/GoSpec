@@ -8,8 +8,7 @@ CounterStrikeSharp plugin for allowing players to move themselves to spec by typ
 4. Move `GoSpec` folder into your server's `addons/counterstrikesharp/plugins` folder.
 
 ## Commands
-`!spec` in chat to move to spec
-_Alternatives:_ `!s`, `!afk`, `!brb`
+`!spec` in chat to move to spec [_Alternatives:_ `!s`, `!afk`, `!brb`]
 
 `!ct` in chat to join ct from spec
 
