@@ -16,7 +16,7 @@ public class GoSpec : BasePlugin
         Console.WriteLine($"{ModuleName} version {ModuleVersion} by {ModuleAuthor} is active.");
     }
 
-    [ConsoleCommand("spec", "Moves you to spec.")]
+    [ConsoleCommand("css_spec", "Moves you to spec.")]
     [CommandHelper(whoCanExecute: CommandUsage.CLIENT_ONLY)]
     public void OnSpecCommand(CCSPlayerController? caller, CommandInfo command)
     {
@@ -37,14 +37,14 @@ public class GoSpec : BasePlugin
     public void OnBRBCommand(CCSPlayerController? caller, CommandInfo command) => OnSpecCommand(caller, command);
     #endregion
 
-    [ConsoleCommand("ct", "Joins the counterterrorist team.")]
+    [ConsoleCommand("css_ct", "Joins the counterterrorist team.")]
     [CommandHelper(whoCanExecute: CommandUsage.CLIENT_ONLY)]
     public void OnJoinCTCommand(CCSPlayerController? caller, CommandInfo command)
     {
         ChangeTeam(caller, CsTeam.CounterTerrorist);
     }
 
-    [ConsoleCommand("t", "Joins the terrorist team.")]
+    [ConsoleCommand("css_t", "Joins the terrorist team.")]
     [CommandHelper(whoCanExecute: CommandUsage.CLIENT_ONLY)]
     public void OnJoinTCommand(CCSPlayerController? caller, CommandInfo command)
     {
@@ -61,7 +61,7 @@ public class GoSpec : BasePlugin
             return false;
         }
         
-        if (!IsInSpec(caller) && moveTo != CsTeam.Spectator)
+        if (!IsUnassigned(caller) && moveTo != CsTeam.Spectator)
         {
             caller.PrintToChat($"{ChatColors.Red}You must be in spec to use this command.");
             return false;
@@ -92,6 +92,12 @@ public class GoSpec : BasePlugin
         }
 
         return count;
+    }
+
+    private bool IsUnassigned(CCSPlayerController? caller)
+    {
+        if (caller == null) return false;
+        return caller.TeamNum != (int)CsTeam.Terrorist && caller.TeamNum != (int)CsTeam.CounterTerrorist;
     }
 
     private bool IsInSpec(CCSPlayerController? caller)
