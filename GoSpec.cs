@@ -9,7 +9,7 @@ public class GoSpec : BasePlugin
 {
     public override string ModuleName => "GoSpec";
     public override string ModuleAuthor => "cosmic sans";
-    public override string ModuleVersion => "1.1";
+    public override string ModuleVersion => "1.2";
 
     public override void Load(bool hotReload)
     {
